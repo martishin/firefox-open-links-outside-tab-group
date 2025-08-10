@@ -1,6 +1,6 @@
 {
     "manifest_version": 2,
-    "name": "Open Links Outside Group",
+    "name": "Open Links Outside Tab Group",
     "version": "1.0.0",
     "description": "When a link opens from a grouped tab, move the new tab directly after that group.",
     "permissions": ["tabs", "tabGroups"],
@@ -13,9 +13,9 @@
     },
     "browser_specific_settings": {
         "gecko": {
-            "id": "open-links-outside-group@alexmartishin",
+            "id": "open-links-outside-tab-group@alexmartishin",
             "strict_min_version": "138.0"
         }
     },
-    "homepage_url": "https://github.com/martishin/firefox-open-links-outside-group"
+    "homepage_url": "https://github.com/martishin/firefox-open-links-outside-tab-group"
 }

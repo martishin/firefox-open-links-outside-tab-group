@@ -1,5 +1,5 @@
 {
-  "name": "open-lionks-outside-group",
+  "name": "open-links-outside-tab-group",
   "version": "1.0.0",
   "private": true,
   "description": "Open links outside the current tab group in Firefox.",
