@@ -1,0 +1,14 @@
+{
+  "name": "open-lionks-outside-group",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Open links outside the current tab group in Firefox.",
+  "scripts": {
+    "lint": "web-ext lint",
+    "build": "web-ext build --config web-ext-config.cjs --overwrite-dest",
+    "sign:listed": "web-ext sign --config web-ext-config.cjs --channel=listed",
+    "sign:unlisted": "web-ext sign --config web-ext-config.cjs --channel=unlisted"
+  },
+  "devDependencies": {},
+  "license": "MIT"
+}
