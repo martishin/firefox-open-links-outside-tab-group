@@ -1,38 +1,21 @@
 {
-  "manifest_version": 2,
-  "name": "Open Links Outside Group",
-  "version": "1.0.0",
-  "description": "Open links in a new tab outside the current tab group. Auto-mode optional. Minimal permissions. No data collection.",
-  "permissions": [
-    "tabs",
-    "contextMenus",
-    "storage"
-  ],
-  "background": {
-    "scripts": [
-      "background.js"
-    ]
-  },
-  "browser_action": {
-    "default_title": "Open Links Outside Group \u2014 toggle auto mode",
-    "default_icon": {
-      "32": "icons/icon-32.png",
-      "48": "icons/icon-48.png",
-      "96": "icons/icon-96.png",
-      "128": "icons/icon-128.png"
-    }
-  },
-  "icons": {
-    "32": "icons/icon-32.png",
-    "48": "icons/icon-48.png",
-    "96": "icons/icon-96.png",
-    "128": "icons/icon-128.png"
-  },
-  "browser_specific_settings": {
-    "gecko": {
-      "id": "open-links-outside-group@alexmartishin",
-      "strict_min_version": "102.0"
-    }
-  },
-  "homepage_url": "https://github.com/martishin/firefox-open-links-outside-group"
+    "manifest_version": 2,
+    "name": "Open Links Outside Group",
+    "version": "1.0.0",
+    "description": "When a link opens from a grouped tab, move the new tab directly after that group.",
+    "permissions": ["tabs", "tabGroups"],
+    "background": { "scripts": ["background.js"] },
+    "icons": {
+        "32": "icons/icon-32.png",
+        "48": "icons/icon-48.png",
+        "96": "icons/icon-96.png",
+        "128": "icons/icon-128.png"
+    },
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "open-links-outside-group@alexmartishin",
+            "strict_min_version": "138.0"
+        }
+    },
+    "homepage_url": "https://github.com/martishin/firefox-open-links-outside-group"
 }
