@@ -1,22 +1,24 @@
 name: build-and-validate
 
 on:
-  workflow_dispatch:
+    workflow_dispatch:
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-      - run: npm i -g web-ext@latest
-      - run: web-ext lint
-      - run: web-ext build --config web-ext-config.js
-      # Optional signing (set secrets AMO_API_KEY / AMO_API_SECRET)
-      - if: ${{ secrets.AMO_API_KEY && secrets.AMO_API_SECRET }}
+    build:
+        runs-on: ubuntu-latest
         env:
-          WEB_EXT_API_KEY: ${{ secrets.AMO_API_KEY }}
-          WEB_EXT_API_SECRET: ${{ secrets.AMO_API_SECRET }}
-        run: web-ext sign --config web-ext-config.js --channel=unlisted
+            WEB_EXT_API_KEY: ${{ secrets.AMO_API_KEY }}
+            WEB_EXT_API_SECRET: ${{ secrets.AMO_API_SECRET }}
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: '22'
+            - run: npm i -g web-ext@latest
+            - run: web-ext lint
+            - run: web-ext build --config web-ext-config.cjs
+
+            # Optional signing: only if both env vars are non-empty
+            - name: Sign (unlisted)
+              if: ${{ env.WEB_EXT_API_KEY != '' && env.WEB_EXT_API_SECRET != '' }}
+              run: web-ext sign --config web-ext-config.cjs --channel=unlisted
