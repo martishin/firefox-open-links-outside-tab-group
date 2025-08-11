@@ -1,8 +1,8 @@
 {
     "manifest_version": 2,
     "name": "Open Links Outside Tab Group",
-    "version": "1.0.0",
-    "description": "When a link opens from a grouped tab, move the new tab directly after that group.",
+    "version": "1.0.1",
+    "description": "When a link is opened from a grouped tab, the new tab is placed directly after that group.",
     "permissions": ["tabs", "tabGroups"],
     "background": { "scripts": ["background.js"] },
     "icons": {
@@ -13,7 +13,7 @@
     },
     "browser_specific_settings": {
         "gecko": {
-            "id": "open-links-outside-tab-group@alexmartishin",
+            "id": "open-links-outside-group@alexmartishin",
             "strict_min_version": "138.0"
         }
     },
