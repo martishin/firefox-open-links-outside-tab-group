@@ -1,4 +1,4 @@
-# Open Links Outside Tab Group (Firefox)
+# Open Links Outside Tab Group (Firefox Extension)
 
 Open links outside the current tab group in Firefox (works nicely with vertical tabs + native groups).
 
